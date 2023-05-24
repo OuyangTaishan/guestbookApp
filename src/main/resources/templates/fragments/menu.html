@@ -1,0 +1,18 @@
+<header th:fragment="menu(active)">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-start">
+            <a th:href="@{/character/show}" class="navbar-item"
+               th:classappend="${#strings.equals(active, 'Character') ? 'is-active' : ''}">
+                Characters
+            </a>
+            <a th:href="@{/actor/show}" class="navbar-item"
+               th:classappend="${#strings.equals(active, 'Actors') ? 'is-active' : ''}">
+                Actors
+            </a>
+            <a th:href="@{/series/show}" class="navbar-item"
+               th:classappend="${#strings.equals(active, 'Series') ? 'is-active' : ''}">
+                Series
+            </a>
+        </div>
+    </nav>
+</header>

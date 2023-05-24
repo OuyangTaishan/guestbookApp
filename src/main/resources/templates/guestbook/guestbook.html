@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{/fragments/head :: head(title='Guestbook')}"></head>
+<body>
+<div class="container">
+    <div class="columns">
+        <div class="column is-offset-one-quarter is-half">
+            <h1 class="title is-1">Guestbook</h1>
+            <a href="#" th:href="@{/guestbook/form}" class="button is-primary">New Guest</a>
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Message</th>
+                </tr>
+                <tr th:each="guest : ${guestBook}">
+                    <td th:text="${guest.name}"/>
+                    <td th:text="${guest.message}"/>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
